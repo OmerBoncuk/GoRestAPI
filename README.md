@@ -27,7 +27,6 @@ This project contains a **Postman collection** designed to test basic CRUD (Crea
 
 All requests use a **Bearer Token** for authentication. The token is statically included in the collection:
 
-
 > ⚠️ For real projects, it is recommended to store tokens securely using environment variables or secret managers.
 
 ## ✅ Test Scripts
@@ -38,5 +37,7 @@ Each request includes basic tests to verify response status codes. Example test:
 pm.test("Status code is 200", function () {
     pm.response.to.have.status(200);
 });
+
+// Save the UserID for further requests
 var UserID = pm.response.json().id;
 pm.collectionVariables.set("UserID", UserID);
